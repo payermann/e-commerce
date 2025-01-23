@@ -59,6 +59,7 @@ DATABASES = {
         'NAME': os.environ.get('POSTGRES_DB', 'db'),
         'USER': os.environ.get('POSTGRES_USER', 'user'),
         'PASSWORD': os.environ.get('POSTGRES_PASSWORD', 'password'),
+        "HOST": os.environ.get("SQL_HOST", "localhost"),
     }
 }
 
@@ -98,6 +99,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [BASE_DIR  / 'static']
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
