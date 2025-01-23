@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  db:
+    image: "postgres:alpine"
+    ports:
+      - "5432"
+    volumes:
+      - ../dbdata:/var/lib/postgresql/data
+    env_file:
+      - .env
+
+  backend:
+    build:
+      dockerfile: backend/Dockerfile
+      context: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./:/home/user/app/
+    depends_on:
+      - db
+    env_file:
+      - .env
