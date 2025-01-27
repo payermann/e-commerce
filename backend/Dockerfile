@@ -24,4 +24,5 @@ RUN poetry install --with dev --no-root --no-interaction --no-ansi
 
 USER user
 #CMD tail -f /dev/null
-CMD gunicorn main.wsgi --log-file - -b 0.0.0.0:8000 --reload
+# CMD gunicorn main.wsgi --log-file - -b 0.0.0.0:8000 --reload
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]

@@ -1,1 +1,8 @@
-HI
+{% extends 'base.html' %} 
+{% block title %}
+  e-commerce 
+{% endblock %} 
+{% block content %}
+  {% include 'elements/carousel.html' %}
+  {% include 'elements/card-list.html' %}
+{% endblock %}
