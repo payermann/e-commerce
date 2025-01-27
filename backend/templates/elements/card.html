@@ -1,0 +1,17 @@
+<div class="card bg-base-100 h-106 w-76 shadow-xl !mx-4">
+  <figure class="h-48">
+    <img  class="!h-full w-full object-cover object-center"
+      src={{ product.image }}
+      alt={{ product.title }} />
+  </figure>
+  <div class="card-body">
+    <div class="flex justify-between">
+      <div><h2 class="card-title">{{ product.title }}</h2></div>
+      <div><h2 class="card-prise !font-bold">{{ product.short_price }}</h2></div>
+    </div>
+    <p class="!py-2" >{{ product.short_description }}</p>
+    <div class="card-actions justify-end">
+      <button class="btn btn-primary">Buy Now</button>
+    </div>
+  </div>
+</div>
