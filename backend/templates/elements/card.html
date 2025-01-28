@@ -1,4 +1,4 @@
-<div class="card bg-base-100 h-106 w-76 shadow-xl !mx-4">
+<div class="card bg-base-100 h-106 w-68 shadow-xl !mx-4">
   <figure class="h-48">
     <img  class="!h-full w-full object-cover object-center"
       src={{ product.image }}
@@ -11,7 +11,7 @@
     </div>
     <p class="!py-2" >{{ product.short_description }}</p>
     <div class="card-actions justify-end">
-      <button class="btn btn-primary">Buy Now</button>
+      <a href="{% url 'product' product.pk %}" class="btn btn-primary">Buy Now</a>
     </div>
   </div>
 </div>

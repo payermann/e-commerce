@@ -1,38 +1,23 @@
-<div class="carousel w-full">
-  <div id="slide1" class="carousel-item relative w-full">
-    <img
-      src="https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.webp"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide4" class="btn btn-circle">❮</a>
-      <a href="#slide2" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide2" class="carousel-item relative w-full">
-    <img
-      src="https://img.daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.webp"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide1" class="btn btn-circle">❮</a>
-      <a href="#slide3" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide3" class="carousel-item relative w-full">
-    <img
-      src="https://img.daisyui.com/images/stock/photo-1414694762283-acccc27bca85.webp"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide2" class="btn btn-circle">❮</a>
-      <a href="#slide4" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide4" class="carousel-item relative w-full">
-    <img
-      src="https://img.daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.webp"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide3" class="btn btn-circle">❮</a>
-      <a href="#slide1" class="btn btn-circle">❯</a>
-    </div>
+<div class="justify-center flex">
+  <div class="carousel max-w-7xl h-96">
+    {% for action in actions %}
+      <div id="slide{{ forloop.counter }}" class="carousel-item relative w-full">
+        <img
+          src="{{ action.image }}"
+          alt="{{ action.title }}"
+          class="w-full object-cover object-center rounded-lg shadow-xl" />
+        <div class="absolute flex flex-col text-center max-w-5xl bg-base-300 !px-4 top-1/2 -translate-y-1/2 transform left-1/2 -translate-x-1/2 rounded-lg">
+          <h1 class="!text-5xl !font-bold">{{ action.title }}</h1>
+          <p class="!py-6">{{ action.short_description }}</p>
+        </div>
+        <div class="absolute top-4/5 flex justify-center w-full">
+          <a href="{% url 'action' action.pk %}" class="action-btn btn btn-lg btn-secondary">Buy Now</a>
+        </div>
+        <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+          <a href="#slide{% if forloop.first %}{{ actions|length }}{% else %}{{ forloop.counter|add:'-1' }}{% endif %}" class="btn btn-circle">❮</a>
+          <a href="#slide{% if forloop.last %}1{% else %}{{ forloop.counter|add:'1' }}{% endif %}" class="btn btn-circle">❯</a>
+        </div>
+      </div>
+    {% endfor %}
   </div>
 </div>
