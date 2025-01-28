@@ -19,3 +19,16 @@ class Product(models.Model):
 
     def __str__(self):
         return self.title
+
+class Action(models.Model):
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    image = models.ImageField(upload_to='actions/')
+
+    def short_description(self):
+        if len(self.description) > 75:
+            return self.description[:75].rsplit(' ', 1)[0] + '...'
+        return self.description
+
+    def __str__(self):
+        return self.title
