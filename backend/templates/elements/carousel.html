@@ -5,10 +5,13 @@
         <img
           src="{{ action.image }}"
           alt="{{ action.title }}"
-          class="w-full object-cover object-center" />
+          class="w-full object-cover object-center rounded-lg shadow-xl" />
         <div class="absolute flex flex-col text-center max-w-5xl bg-base-300 !px-4 top-1/2 -translate-y-1/2 transform left-1/2 -translate-x-1/2 rounded-lg">
           <h1 class="!text-5xl !font-bold">{{ action.title }}</h1>
           <p class="!py-6">{{ action.short_description }}</p>
+        </div>
+        <div class="absolute top-4/5 flex justify-center w-full">
+          <a href="{% url 'action' action.pk %}" class="action-btn btn btn-lg btn-secondary">Buy Now</a>
         </div>
         <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
           <a href="#slide{% if forloop.first %}{{ actions|length }}{% else %}{{ forloop.counter|add:'-1' }}{% endif %}" class="btn btn-circle">❮</a>

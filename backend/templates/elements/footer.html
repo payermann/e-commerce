@@ -1,14 +1,14 @@
 <footer class="footer footer-center bg-base-200 text-base-content border-base-300 border-t !px-10 !py-4">
   <aside class="grid-flow-col items-center">
-    <a class="link link-hover text-lg font-bold">e-commerce</a>
+    <a href="{% url 'index' %}" class="link link-hover text-lg font-bold">e-commerce</a>
     <span class="mx-2 text-gray-300">|</span>
     <a class="link link-hover">Gift & Decoration Store</a>
   </aside>
   <nav class="grid-flow-col gap-4 md:place-self-center md:justify-self-center">
     <div class="grid grid-flow-col gap-8">
-    <a class="link link-hover">Home</a>
-    <a class="link link-hover">Shop</a>
-    <a class="link link-hover">Product</a>
+    <a href="{% url 'index' %}" class="link link-hover">Home</a>
+    <a href="{% url 'index' %}" class="link link-hover">Shop</a>
+    <a href="{% url 'product-list' %}" class="link link-hover">Product</a>
     <a class="link link-hover">Blog</a>
     <a class="link link-hover">Contact Us</a>
   </div>

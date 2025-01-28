@@ -18,19 +18,19 @@
       <ul
         tabindex="0"
         class="menu menu-md dropdown-content bg-base-100 min-w-max rounded-box z-[1] mt-3 w-52 p-2 shadow">
-        <li><a>Home</a></li>
-        <li><a>Shop</a></li>
-        <li><a>Product</a></li>
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'index' %}">Shop</a></li>
+        <li><a href="{% url 'product-list' %}">Product</a></li>
         <li><a>Contact Us</a></li>
       </ul>
     </div>
-    <a class="btn btn-lg btn-ghost text-xl">e-commerce</a>
+    <a  href="{% url 'index' %}" class="btn btn-lg btn-ghost text-xl">e-commerce</a>
   </div>
   <div class="navbar-center hidden lg:flex">
     <ul class="menu menu-horizontal px-1">
-      <li><a>Home</a></li>
-      <li><a>Shop</a></li>
-      <li><a>Product</a></li>
+      <li><a href="{% url 'index' %}">Home</a></li>
+      <li><a href="{% url 'index' %}">Shop</a></li>
+      <li><a href="{% url 'product-list' %}">Product</a></li>
       <li><a class="whitespace-nowrap">Contact Us</a></li>
     </ul>
   </div>
